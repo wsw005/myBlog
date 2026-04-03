@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>vue框架创建 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="搭建 Vue 框架详细步骤目录 1. 环境准备 2. 选择搭建工具 3. 使用 create-vue（Vue 3 推荐） 4. 使用 Vue CLI（兼容 Vue 2&#x2F;3） 5. 项目目录结构解析 6. 启动与调试项目 7. 常见问题排查  1. 环境准备安装 Node.jsVue 项目依赖 Node.js 环境（推荐 v16.0+ 或更高版本）：  访问 Node.js 官网 下载对应">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue框架创建">
+<meta property="og:url" content="http://example.com/2026/04/03/vue%E6%A1%86%E6%9E%B6%E5%88%9B%E5%BB%BA/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="搭建 Vue 框架详细步骤目录 1. 环境准备 2. 选择搭建工具 3. 使用 create-vue（Vue 3 推荐） 4. 使用 Vue CLI（兼容 Vue 2&#x2F;3） 5. 项目目录结构解析 6. 启动与调试项目 7. 常见问题排查  1. 环境准备安装 Node.jsVue 项目依赖 Node.js 环境（推荐 v16.0+ 或更高版本）：  访问 Node.js 官网 下载对应">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-04-03T03:32:44.000Z">
+<meta property="article:modified_time" content="2026-04-03T03:33:52.080Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Web前端">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-vue框架创建" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/03/vue%E6%A1%86%E6%9E%B6%E5%88%9B%E5%BB%BA/" class="article-date">
+  <time class="dt-published" datetime="2026-04-03T03:32:44.000Z" itemprop="datePublished">2026-04-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      vue框架创建
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="搭建-Vue-框架详细步骤"><a href="#搭建-Vue-框架详细步骤" class="headerlink" title="搭建 Vue 框架详细步骤"></a>搭建 Vue 框架详细步骤</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#1-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">1. 环境准备</a></li>
+<li><a href="#2-%E9%80%89%E6%8B%A9%E6%90%AD%E5%BB%BA%E5%B7%A5%E5%85%B7">2. 选择搭建工具</a></li>
+<li><a href="#3-%E4%BD%BF%E7%94%A8-create-vuevue-3-%E6%8E%A8%E8%8D%90">3. 使用 create-vue（Vue 3 推荐）</a></li>
+<li><a href="#4-%E4%BD%BF%E7%94%A8-vue-clivue-23-%E5%85%BC%E5%AE%B9">4. 使用 Vue CLI（兼容 Vue 2&#x2F;3）</a></li>
+<li><a href="#5-%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%A7%A3%E6%9E%90">5. 项目目录结构解析</a></li>
+<li><a href="#6-%E5%90%AF%E5%8A%A8%E4%B8%8E%E8%B0%83%E8%AF%95%E9%A1%B9%E7%9B%AE">6. 启动与调试项目</a></li>
+<li><a href="#7-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5">7. 常见问题排查</a></li>
+</ul>
+<h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1. 环境准备"></a>1. 环境准备</h2><h3 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h3><p>Vue 项目依赖 Node.js 环境（推荐 v16.0+ 或更高版本）：</p>
+<ol>
+<li><p>访问 <a target="_blank" rel="noopener" href="https://nodejs.org/">Node.js 官网</a> 下载对应系统的安装包</p>
+</li>
+<li><p>安装完成后验证：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v  <span class="comment"># 查看 Node 版本</span></span><br><span class="line">npm -v   <span class="comment"># 查看 npm 版本（Node 自带）</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="可选：安装-yarn-pnpm"><a href="#可选：安装-yarn-pnpm" class="headerlink" title="可选：安装 yarn&#x2F;pnpm"></a>可选：安装 yarn&#x2F;pnpm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 yarn</span></span><br><span class="line">npm install -g yarn</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 pnpm</span></span><br><span class="line">npm install -g pnpm</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-选择搭建工具"><a href="#2-选择搭建工具" class="headerlink" title="2. 选择搭建工具"></a>2. 选择搭建工具</h2><table>
+<thead>
+<tr>
+<th>工具</th>
+<th>适用场景</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>create-vue</td>
+<td>Vue 3 项目（推荐）</td>
+<td>基于 Vite，构建速度快，配置简洁</td>
+</tr>
+<tr>
+<td>Vue CLI</td>
+<td>Vue 2 或需要复杂配置的项目</td>
+<td>基于 Webpack，生态成熟，配置选项丰富</td>
+</tr>
+</tbody></table>
+<h2 id="3-使用-create-vue（Vue-3-推荐）"><a href="#3-使用-create-vue（Vue-3-推荐）" class="headerlink" title="3. 使用 create-vue（Vue 3 推荐）"></a>3. 使用 create-vue（Vue 3 推荐）</h2><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用 npm</span></span><br><span class="line">npm create vue@latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 yarn</span></span><br><span class="line">yarn create vue</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 pnpm</span></span><br><span class="line">pnpm create vue</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置项目"><a href="#配置项目" class="headerlink" title="配置项目"></a>配置项目</h3><p>执行命令后会出现交互式配置选项：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">✔ Project name: … my-vue-project</span><br><span class="line">✔ Add TypeScript? … No / Yes</span><br><span class="line">✔ Add JSX Support? … No / Yes</span><br><span class="line">✔ Add Vue Router for Single Page Application development? … No / Yes</span><br><span class="line">✔ Add Pinia for state management? … No / Yes</span><br><span class="line">✔ Add Vitest for Unit Testing? … No / Yes</span><br><span class="line">✔ Add an End-to-End Testing Solution? … No / Cypress / Playwright</span><br><span class="line">✔ Add ESLint for code quality? … No / Yes</span><br><span class="line">✔ Add Prettier for code formatting? … No / Yes</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装依赖并启动"><a href="#安装依赖并启动" class="headerlink" title="安装依赖并启动"></a>安装依赖并启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入项目目录</span></span><br><span class="line"><span class="built_in">cd</span> my-vue-project</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动开发服务器</span></span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+
+<p>启动成功后访问：<code>http://localhost:5173</code></p>
+<h2 id="4-使用-Vue-CLI（Vue-2-3-兼容）"><a href="#4-使用-Vue-CLI（Vue-2-3-兼容）" class="headerlink" title="4. 使用 Vue CLI（Vue 2&#x2F;3 兼容）"></a>4. 使用 Vue CLI（Vue 2&#x2F;3 兼容）</h2><h3 id="安装-Vue-CLI"><a href="#安装-Vue-CLI" class="headerlink" title="安装 Vue CLI"></a>安装 Vue CLI</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">yarn global add @vue/cli</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建项目-1"><a href="#创建项目-1" class="headerlink" title="创建项目"></a>创建项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create my-vue-project</span><br></pre></td></tr></table></figure>
+
+<h3 id="选择配置"><a href="#选择配置" class="headerlink" title="选择配置"></a>选择配置</h3><ul>
+<li>可选择默认配置（Vue 2&#x2F;Vue 3）</li>
+<li>或手动选择特性（Babel、Router、Vuex 等）</li>
+</ul>
+<h3 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> my-vue-project</span><br><span class="line">npm run serve</span><br></pre></td></tr></table></figure>
+
+<p>启动成功后访问：<code>http://localhost:8080</code></p>
+<h2 id="5-项目目录结构解析"><a href="#5-项目目录结构解析" class="headerlink" title="5. 项目目录结构解析"></a>5. 项目目录结构解析</h2><h3 id="create-vue-项目结构（Vue-3）"><a href="#create-vue-项目结构（Vue-3）" class="headerlink" title="create-vue 项目结构（Vue 3）"></a>create-vue 项目结构（Vue 3）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">my-vue-project/</span><br><span class="line">├── node_modules/    # 依赖包</span><br><span class="line">├── public/          # 静态资源</span><br><span class="line">├── src/             # 源代码</span><br><span class="line">│   ├── assets/      # 静态资源（图片、样式等）</span><br><span class="line">│   ├── components/  # 公共组件</span><br><span class="line">│   ├── router/      # 路由配置（若选择 Vue Router）</span><br><span class="line">│   ├── stores/      # 状态管理（若选择 Pinia）</span><br><span class="line">│   ├── views/       # 页面组件</span><br><span class="line">│   ├── App.vue      # 根组件</span><br><span class="line">│   └── main.js      # 入口文件</span><br><span class="line">├── .eslintrc.js     # ESLint 配置</span><br><span class="line">├── .prettierrc      # Prettier 配置</span><br><span class="line">├── index.html       # HTML 模板</span><br><span class="line">├── package.json     # 项目配置</span><br><span class="line">└── vite.config.js   # Vite 配置</span><br></pre></td></tr></table></figure>
+
+<h3 id="Vue-CLI-项目结构（Vue-2）"><a href="#Vue-CLI-项目结构（Vue-2）" class="headerlink" title="Vue CLI 项目结构（Vue 2）"></a>Vue CLI 项目结构（Vue 2）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">my-vue-project/</span><br><span class="line">├── node_modules/    # 依赖包</span><br><span class="line">├── public/          # 静态资源</span><br><span class="line">├── src/             # 源代码</span><br><span class="line">│   ├── assets/      # 静态资源</span><br><span class="line">│   ├── components/  # 公共组件</span><br><span class="line">│   ├── router/      # 路由配置</span><br><span class="line">│   ├── store/       # 状态管理（Vuex）</span><br><span class="line">│   ├── views/       # 页面组件</span><br><span class="line">│   ├── App.vue      # 根组件</span><br><span class="line">│   └── main.js      # 入口文件</span><br><span class="line">├── .eslintrc.js     # ESLint 配置</span><br><span class="line">├── babel.config.js  # Babel 配置</span><br><span class="line">├── package.json     # 项目配置</span><br><span class="line">└── vue.config.js    # Vue CLI 配置</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-启动与调试项目"><a href="#6-启动与调试项目" class="headerlink" title="6. 启动与调试项目"></a>6. 启动与调试项目</h2><h3 id="启动命令"><a href="#启动命令" class="headerlink" title="启动命令"></a>启动命令</h3><table>
+<thead>
+<tr>
+<th>工具</th>
+<th>启动命令</th>
+<th>端口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>create-vue</td>
+<td>npm run dev</td>
+<td>5173</td>
+</tr>
+<tr>
+<td>Vue CLI</td>
+<td>npm run serve</td>
+<td>8080</td>
+</tr>
+</tbody></table>
+<h3 id="调试方式"><a href="#调试方式" class="headerlink" title="调试方式"></a>调试方式</h3><ol>
+<li>浏览器开发者工具（F12）</li>
+<li>Vue Devtools 扩展（推荐安装）</li>
+<li>VS Code 调试器</li>
+</ol>
+<h2 id="7-常见问题排查"><a href="#7-常见问题排查" class="headerlink" title="7. 常见问题排查"></a>7. 常见问题排查</h2><h3 id="端口占用"><a href="#端口占用" class="headerlink" title="端口占用"></a>端口占用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Windows</span></span><br><span class="line">netstat -ano | findstr :8080</span><br><span class="line">taskkill /PID &lt;进程ID&gt; /F</span><br><span class="line"></span><br><span class="line"><span class="comment"># macOS/Linux</span></span><br><span class="line">lsof -i:8080</span><br><span class="line"><span class="built_in">kill</span> -9 &lt;进程ID&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="依赖安装失败"><a href="#依赖安装失败" class="headerlink" title="依赖安装失败"></a>依赖安装失败</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 清除 npm 缓存</span></span><br><span class="line">npm cache clean --force</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换镜像源</span></span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+
+<h3 id="Node-版本不兼容"><a href="#Node-版本不兼容" class="headerlink" title="Node 版本不兼容"></a>Node 版本不兼容</h3><ul>
+<li>使用 nvm 或 nvs 管理 Node 版本</li>
+<li>推荐使用与项目 package.json 中 engines 字段匹配的 Node 版本</li>
+</ul>
+<hr>
+<p><strong>总结</strong>：  </p>
+<ul>
+<li>新手推荐使用 <code>create-vue</code> 搭建 Vue 3 项目，配置简单、启动快速  </li>
+<li>若需兼容旧项目或需要复杂 Webpack 配置，可选择 Vue CLI  </li>
+<li>搭建过程中遇到问题可查看官方文档或社区资源</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/03/vue%E6%A1%86%E6%9E%B6%E5%88%9B%E5%BB%BA/" data-id="cmnif8pwe0000lg5ug65c6f4o" data-title="vue框架创建" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web%E5%89%8D%E7%AB%AF/" rel="tag">Web前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2026/04/03/%E9%85%8D%E7%BD%AE%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F%E6%AD%A5%E9%AA%A4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">配置淘宝镜像步骤</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/" rel="tag">Hexo,学习日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web%E5%89%8D%E7%AB%AF/" rel="tag">Web前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%85%8D%E7%BD%AE%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F%EF%BC%88npmmirror%EF%BC%89%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/" rel="tag">配置淘宝镜像（npmmirror）详细步骤</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo-%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/" style="font-size: 10px;">Hexo,学习日记</a> <a href="/tags/Web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">Web前端</a> <a href="/tags/%E9%85%8D%E7%BD%AE%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F%EF%BC%88npmmirror%EF%BC%89%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/" style="font-size: 10px;">配置淘宝镜像（npmmirror）详细步骤</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/04/03/vue%E6%A1%86%E6%9E%B6%E5%88%9B%E5%BB%BA/">vue框架创建</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/03/%E9%85%8D%E7%BD%AE%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F%E6%AD%A5%E9%AA%A4/">配置淘宝镜像步骤</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/03/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
